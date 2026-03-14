@@ -1,0 +1,1 @@
+cd build && cmake .. && cmake --build . -j && ./c4
