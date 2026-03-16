@@ -4,6 +4,7 @@
 
 Game::Game() {
     std::cout << " + Game created" << std::endl;
+    
 }
 
 Game::~Game() {
