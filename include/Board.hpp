@@ -1,11 +1,17 @@
 #pragma once
 
+#include <cstdint>
+#include <array>
+
 class Board {
 private:
-public:
-    bool team;
+    uint64_t allPieces;
 
-    // uint64_t pieces[2];
+    bool isColumnFull(int);
+    bool checkWin(uint64_t bitboard);
+    void dropPiece(bool, int);
+public:
+    std::array<uint64_t, 2> pieces;
 
     Board();
     ~Board();
