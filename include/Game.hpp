@@ -8,6 +8,7 @@ private:
     void init();
     void finishGame();
     void getMove(int);
+    void finishTurn();
 public:
 
     Game();

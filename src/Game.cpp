@@ -9,20 +9,30 @@ Game::Game() : mGameState(true), playerTurn(0) {
 
     Board mBoard;
     init();
-    Render::printBoardWin(mBoard.pieces[0], mBoard.pieces[1]);
-    
+    Render::printBoard(mBoard.pieces[0], mBoard.pieces[1]);
 }
 
 Game::~Game() {
     std::cout << " - Game ended" << std::endl;
 }
 
+void Game::finishTurn(){
+    playerTurn = !playerTurn;
+}
+
 void Game::init(){
     while(mGameState){
-        if(playerTurn) {
-            
-        } else {
+        if(!playerTurn) {
+            std::cout << "p1 turn" << std::endl;
 
+            finishTurn();
+        } else {
+            std::cout << "p2 turn" << std::endl;
+            
+            finishTurn();
+            
+            //!DEBUGGING
+            mGameState = 0;
         }
     }
 }
