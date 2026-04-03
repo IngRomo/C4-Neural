@@ -16,12 +16,12 @@ bool Board::isColumnFull(int col) {
     return (allPieces >> topPosition) & 1; 
 }
 
-void Board::dropPiece(bool player, int col) {
+bool Board::dropPiece(bool player, int col) {
     //TODO:
     //! IF THIS HAPPENS DONT SWAP PLAYERS!!!!
     if (isColumnFull(col)){
         std::cout << "This column is full" << std::endl;
-        return;
+        return false;
     };
 
     //* Lowest empty row in col
@@ -31,9 +31,9 @@ void Board::dropPiece(bool player, int col) {
             // uint64_t newPos = 1;                    //* 64-bit = 1
             // uint64_t mask = (newPos << pos);        //* Shift 1 to position pos (drop position)
             // pieces[player] = pieces[player] | mask; //* Apply mask for the player pieces
-            pieces[player] |= (1ULL << pos);   //* set bit for current player
+            pieces[player] |= (1ULL << pos);   //* Set bit for current player
             allPieces = pieces[0] | pieces[1];
-            return;
+            return true;
         }
     }
 };

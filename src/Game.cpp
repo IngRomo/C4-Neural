@@ -38,18 +38,22 @@ void Game::init(){
             while (col == -1) {
                 col = InputHandler::getColumn();
             }
-            mBoard.dropPiece(playerTurn, col);
-
-            finishTurn();
+            if (mBoard.dropPiece(playerTurn, col)) {
+                finishTurn();
+            } else {
+                col = -1;
+            }
         } else {
             std::cout << "p2 turn" << std::endl;
 
             while (col == -1) {
                 col = InputHandler::getColumn();
             }
-            mBoard.dropPiece(playerTurn, col);
-
-            finishTurn();
+            if (mBoard.dropPiece(playerTurn, col)) {
+                finishTurn();
+            } else {
+                col = -1;
+            }
         }
     }
 }

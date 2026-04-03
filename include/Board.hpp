@@ -14,6 +14,6 @@ public:
     Board();
     ~Board();
     
-    void dropPiece(bool, int);
+    bool dropPiece(bool, int);
     bool checkWin(uint64_t bitboard);
 };
