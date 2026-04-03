@@ -33,7 +33,8 @@ void Game::init(){
         int col = -1;
 
         if(!playerTurn) {
-            std::cout << "p1 turn" << std::endl;
+            std::cout << "\033[1;31mTurn:\033[0m";
+            std::cout << "\U0001F534\n";
 
             while (col == -1) {
                 col = InputHandler::getColumn();
@@ -44,7 +45,8 @@ void Game::init(){
                 col = -1;
             }
         } else {
-            std::cout << "p2 turn" << std::endl;
+            std::cout << "\033[1;33mTurn:\033[0m";
+            std::cout << "\U0001F7E1\n";
 
             while (col == -1) {
                 col = InputHandler::getColumn();
