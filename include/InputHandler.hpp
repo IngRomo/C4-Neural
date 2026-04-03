@@ -3,8 +3,9 @@
 class InputHandler
 {
 private:
-    int getColumn();
 public:
     InputHandler();
     ~InputHandler();
+    
+    static int getColumn();
 };

@@ -18,5 +18,5 @@ int InputHandler::getColumn() {
         std::cout << "Invalid column!" << std::endl;
         return -1;
     }
-    return col;
+    return col - 1;
 }
