@@ -4,10 +4,9 @@
 #include "Board.hpp"
 #include "Render.hpp"
 
-Game::Game() : mGameState(true), playerTurn(0) {
+Game::Game() : mGameState(true), playerTurn(0), mBoard() {
     std::cout << " + Game created" << std::endl;
 
-    Board mBoard;
     init();
     Render::printBoard(mBoard.pieces[0], mBoard.pieces[1]);
 }
@@ -25,9 +24,19 @@ void Game::init(){
         if(!playerTurn) {
             std::cout << "p1 turn" << std::endl;
 
+            if(mBoard.checkWin(mBoard.pieces[playerTurn])) {
+                std::cout << "Player " << (playerTurn ? 2 : 1) << " wins!" << std::endl;
+                mGameState = false;
+            }
+
             finishTurn();
         } else {
             std::cout << "p2 turn" << std::endl;
+            
+            if(mBoard.checkWin(mBoard.pieces[playerTurn])) {
+                std::cout << "Player " << (playerTurn ? 2 : 1) << " wins!" << std::endl;
+                mGameState = false;
+            }
             
             finishTurn();
             

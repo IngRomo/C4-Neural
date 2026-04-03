@@ -4,6 +4,7 @@ class Game {
 private:
     bool mGameState;
     bool playerTurn;
+    Board mBoard;
 
     void init();
     void finishGame();
