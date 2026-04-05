@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <array>
+#include <vector>
 
 class Board {
 private:
@@ -16,4 +17,6 @@ public:
     
     bool dropPiece(bool, int);
     bool checkWin(uint64_t bitboard);
+    std::vector<int> getValidMoves();
+    bool isGameOver();
 };

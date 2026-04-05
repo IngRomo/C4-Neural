@@ -20,7 +20,7 @@ bool Board::dropPiece(bool player, int col) {
     //TODO:
     //! IF THIS HAPPENS DONT SWAP PLAYERS!!!!
     if (isColumnFull(col)){
-        std::cout << "This column is full" << std::endl;
+        std::cout << "This column is full\n";
         return false;
     };
 
@@ -46,7 +46,7 @@ bool Board::checkWin(uint64_t bitboard) {
     offset = 1;
     m = (bitboard >> offset) & bitboard;
     if((m >> offset * 2) & m){
-        std::cout << "Horizontal ― win" << std::endl;
+        std::cout << "Horizontal ― win\n";
         return true;
     }
 
@@ -54,7 +54,7 @@ bool Board::checkWin(uint64_t bitboard) {
     offset = 8;
     m = (bitboard >> offset) & bitboard;
     if((m >> offset * 2) & m){
-        std::cout << "Vertical | win" << std::endl;
+        std::cout << "Vertical | win\n";
         return true;
     }
 
@@ -62,7 +62,7 @@ bool Board::checkWin(uint64_t bitboard) {
     offset = 7;
     m = (bitboard >> offset) & bitboard;
     if((m >> offset * 2) & m){
-        std::cout << "Diagonal \\ win" << std::endl;
+        std::cout << "Diagonal \\ win\n";
         return true;
     }
 
@@ -70,9 +70,23 @@ bool Board::checkWin(uint64_t bitboard) {
     offset = 9;
     m = (bitboard >> offset) & bitboard;
     if((m >> offset * 2) & m){
-        std::cout << "Diagonal / win" << std::endl;
+        std::cout << "Diagonal / win\n";
         return true;
     }
 
     return false;
+}
+
+std::vector<int> Board::getValidMoves() {
+    std::vector<int> validMoves;
+    for (int col = 0; col < 7; col++) {
+        if (!isColumnFull(col)) {
+            validMoves.push_back(col);
+        }
+    }
+    return validMoves;
+}
+
+bool Board::isGameOver() {
+    return getValidMoves().empty();
 }
