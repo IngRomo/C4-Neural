@@ -1,4 +1,4 @@
-#include "RandomPlayer.hpp"
+#include "Player/RandomPlayer.hpp"
 #include "Board.hpp"
 
 #include <random>

@@ -1,8 +1,8 @@
 #include <iostream>
 
 #include "Game.hpp"
-#include "HumanPlayer.hpp"
-#include "RandomPlayer.hpp"
+#include "Player/HumanPlayer.hpp"
+#include "Player/RandomPlayer.hpp"
 
 int main(int argc, const char** argv) {
     std::cout << "\n===== C4 ENGINE =====\n\n";

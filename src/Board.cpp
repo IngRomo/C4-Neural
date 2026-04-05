@@ -1,8 +1,5 @@
 #include "Board.hpp"
 
-#include <cstdint>
-#include <iostream>
-
 Board::Board() : allPieces(0){
     pieces[0] = 0;
     pieces[1] = 0;

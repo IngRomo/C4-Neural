@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "IPlayer.hpp"
+#include "Player/IPlayer.hpp"
 
 Game::Game(IPlayer& p1, IPlayer& p2) : mGameState(true),
                                        playerTurn(0),
